@@ -1,13 +1,5 @@
 import 'package:flutter/material.dart';
 
-// class CustomColor {
-//   static const Color backgroundColor = Color(0xfff8f8f8);
-//   static const Color primaryColor = Color(0xff52A447);
-//   static const Color waterColor = Color(0xff00B4D8);
-//   static const Color boldTextColor = Color(0xff000000);
-//   static const Color lightTextColor = Color(0xff677079);
-// }
-
 class AppThemeData {
   AppThemeData._();
 

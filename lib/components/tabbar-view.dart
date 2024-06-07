@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iot_irrigation/constants/assets.dart';
 
-class TabBarComponet extends StatelessWidget {
-  const TabBarComponet({super.key});
+class TabBarComponent extends StatelessWidget {
+  TabBarComponent({super.key});
   static const listTab = ['Thiết bị', 'Lịch sử'];
 
   static const dataDevices = [
@@ -97,110 +97,240 @@ class TabBarComponet extends StatelessWidget {
     },
   ];
 
+  final dataHistory = [
+    {
+      "time": DateTime(2024, 9, 7, 20, 30, 01),
+      "deviceName": "Bình chứa phân Kali",
+      "status": true,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 18, 30, 01),
+      "deviceName": "Bình chứa phân lân",
+      "status": true,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 19, 30, 01),
+      "deviceName": "Bình chứa phân Mg",
+      "status": true,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 19, 30, 01),
+      "deviceName": "Bình chứa nước",
+      "status": true,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 19, 30, 01),
+      "deviceName": "Bình trộn phân",
+      "status": false,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 19, 30, 01),
+      "deviceName": "Khu vực 1",
+      "status": true,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 20, 30, 01),
+      "deviceName": "Bình chứa phân Kali",
+      "status": true,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 18, 30, 01),
+      "deviceName": "Bình chứa phân lân",
+      "status": true,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 19, 30, 01),
+      "deviceName": "Bình chứa phân Mg",
+      "status": true,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 19, 30, 01),
+      "deviceName": "Bình chứa nước",
+      "status": true,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 19, 30, 01),
+      "deviceName": "Bình trộn phân",
+      "status": false,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 19, 30, 01),
+      "deviceName": "Khu vực 1",
+      "status": true,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 20, 30, 01),
+      "deviceName": "Bình chứa phân Kali",
+      "status": true,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 18, 30, 01),
+      "deviceName": "Bình chứa phân lân",
+      "status": true,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 19, 30, 01),
+      "deviceName": "Bình chứa phân Mg",
+      "status": true,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 19, 30, 01),
+      "deviceName": "Bình chứa nước",
+      "status": true,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 19, 30, 01),
+      "deviceName": "Bình trộn phân",
+      "status": false,
+    },
+    {
+      "time": DateTime(2024, 9, 7, 19, 30, 01),
+      "deviceName": "Khu vực 1",
+      "status": true,
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: const EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
+        // margin: const EdgeInsets.all(left: 10, right: 5, top: 5, bottom: 0),
         child: DefaultTabController(
-          initialIndex: 1,
-          length: 2,
-          child: Column(
-            children: <Widget>[
-              TabBar(
-                tabs: <Widget>[
-                  ..._buildTabWidgets(listTab, context),
-                ],
-                indicator: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-              ),
-              Container(
-                height: 405,
-                margin: const EdgeInsets.only(top: 10),
-                child: TabBarView(
+      initialIndex: 1,
+      length: 2,
+      child: Column(
+        children: <Widget>[
+          TabBar(
+            tabs: <Widget>[
+              ..._buildTabWidgets(listTab, context),
+            ],
+            indicator: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Theme.of(context).colorScheme.primary,
+            ),
+          ),
+          Container(
+            height: 405,
+            margin: const EdgeInsets.only(top: 10),
+            child: TabBarView(
+              children: <Widget>[
+                Column(
                   children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        Container(
-                          height: 160,
-                          child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: <Widget>[
-                                _buildTank(context, dataDevices[0]),
-                                _buildTank(context, dataDevices[1]),
-                                _buildTank(context, dataDevices[2]),
-                              ]),
-                        ),
-                        Container(
-                          height: 160,
-                          child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: <Widget>[
-                                _buildTank(context, dataDevices[3]),
-                                _buildTank(context, dataDevices[4]),
-                              ]),
-                        ),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Container(
-                                  height: 80,
-                                  width: 160,
-                                  margin: const EdgeInsets.only(
-                                      top: 5, right: 5, left: 5),
-                                  decoration: BoxDecoration(
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onBackground,
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: <Widget>[
-                                        _buildArea(context, dataDevices[5]),
-                                        _buildArea(context, dataDevices[6]),
-                                        _buildArea(context, dataDevices[7])
-                                      ])),
-                              Container(
-                                  height: 80,
-                                  width: 160,
-                                  margin: const EdgeInsets.only(
-                                      top: 5, right: 5, left: 5),
-                                  decoration: BoxDecoration(
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onBackground,
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: <Widget>[
-                                        _buildSensor(context, dataDevices[8]),
-                                        _buildSensor(context, dataDevices[9]),
-                                        _buildSensor(context, dataDevices[10])
-                                      ]))
-                            ]),
-                      ],
+                    Container(
+                      margin: const EdgeInsets.only(left: 10),
+                      height: 160,
+                      child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: <Widget>[
+                            _buildTank(context, dataDevices[0]),
+                            _buildTank(context, dataDevices[1]),
+                            _buildTank(context, dataDevices[2]),
+                          ]),
                     ),
                     Container(
-                      child: Center(
-                        child: Text('Tuần này'),
-                      ),
+                      margin: const EdgeInsets.only(left: 10),
+                      height: 160,
+                      child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: <Widget>[
+                            _buildTank(context, dataDevices[3]),
+                            _buildTank(context, dataDevices[4]),
+                          ]),
                     ),
+                    Container(
+                      margin: const EdgeInsets.only(left: 10),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                                height: 80,
+                                width: 160,
+                                margin: const EdgeInsets.only(
+                                    top: 5, right: 5, left: 5),
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onBackground,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: <Widget>[
+                                      _buildArea(context, dataDevices[5]),
+                                      _buildArea(context, dataDevices[6]),
+                                      _buildArea(context, dataDevices[7])
+                                    ])),
+                            Container(
+                                height: 80,
+                                width: 160,
+                                margin: const EdgeInsets.only(
+                                    top: 5, right: 5, left: 5),
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onBackground,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: <Widget>[
+                                      _buildSensor(context, dataDevices[8]),
+                                      _buildSensor(context, dataDevices[9]),
+                                      _buildSensor(context, dataDevices[10])
+                                    ]))
+                          ]),
+                    )
                   ],
                 ),
-              )
-            ],
-          ),
-        ));
+                Container(
+                    height: 400,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.vertical,
+                      child: DataTable(
+                          columnSpacing: 3,
+                          headingRowHeight: 30,
+                          dataTextStyle:
+                              Theme.of(context).textTheme.displaySmall,
+                          dataRowMinHeight: 25,
+                          dataRowMaxHeight: 30,
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.onBackground,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          columns: [
+                            DataColumn(label: Text('Thời gian')),
+                            DataColumn(label: Text('Thiết bị')),
+                            DataColumn(label: Text('Hoạt động')),
+                          ],
+                          rows: dataHistory.map((e) {
+                            return DataRow(cells: [
+                              DataCell(
+                                  Text(e['time'].toString().substring(0, 19))),
+                              DataCell(Text(e['deviceName'].toString())),
+                              DataCell(Text(e['status'].toString() == 'true'
+                                  ? 'Mở'
+                                  : 'Đóng')),
+                            ]);
+                          }).toList()
+
+                          // [
+                          //   DataRow(cells: [
+                          //     DataCell(Text(dataHistory[0]['time'].toString().substring(0, 19))),
+                          //     DataCell(Text('Bình chứa Photpho')),
+                          //     DataCell(Text('Mở')),
+                          //   ]),
+                          // ],
+                          ),
+                    )),
+              ],
+            ),
+          )
+        ],
+      ),
+    ));
   }
 
   List<Widget> _buildTabWidgets(List<String> listTab, BuildContext context) {
