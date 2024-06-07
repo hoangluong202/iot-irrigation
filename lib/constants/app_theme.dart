@@ -29,7 +29,7 @@ class AppThemeData {
       onError: Color(0xff52A447),
       background: Color(0xffffffff),
       onBackground: Color(0xfff8f8f8),
-      surface: Color(0xff52A447),
+      surface: Colors.grey,
       onSurface: Color(0xff52A447));
 
   static const _light = FontWeight.w300;
@@ -48,9 +48,15 @@ class AppThemeData {
         fontFamily: 'OpenSans',
         fontWeight: _bold,
         color: boldTextColor),
-    labelMedium: TextStyle(fontSize: 15, fontFamily: 'OpenSans', fontWeight: _regular, color: boldTextColor),
+
+    labelLarge: TextStyle(fontSize: 20, fontFamily: 'OpenSans', fontWeight: _semiBold, color: boldTextColor),
+    labelMedium: TextStyle(fontSize: 15, fontFamily: 'OpenSans', fontWeight: _semiBold, color: boldTextColor),
+    labelSmall: TextStyle(fontSize: 12, fontFamily: 'OpenSans', fontWeight: _semiBold, color: boldTextColor),
+    
     displayLarge: TextStyle(fontSize: 20, fontFamily: 'OpenSans', fontWeight: _regular, color: boldTextColor),
     displayMedium: TextStyle(fontSize: 15, fontFamily: 'OpenSans', fontWeight: _regular, color: boldTextColor),
     displaySmall: TextStyle(fontSize: 12, fontFamily: 'OpenSans', fontWeight: _regular, color: boldTextColor),
+
+    
   );
 }
