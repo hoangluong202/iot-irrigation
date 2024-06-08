@@ -15,8 +15,11 @@ class Assets {
   static const String waterImage = "assets/images/water.png";
   static const String mixerImage = "assets/images/mixer.png";
 
-  static const String homeIcon = "assets/icons/home.svg";
-  static const String calendarIcon = "assets/icons/calendar.svg";
+  static const String homeActiveIcon = "assets/icons/home-active.svg";
+  static const String homeInactiveIcon = "assets/icons/home-inactive.svg";
+  static const String calendarActiveIcon = "assets/icons/calendar-active.svg";
+  static const String calendarInactiveIcon =
+      "assets/icons/calendar-inactive.svg";
   static const String plusIcon = "assets/icons/plus.svg";
 
   static const Map<String, String> assetsDevice = {

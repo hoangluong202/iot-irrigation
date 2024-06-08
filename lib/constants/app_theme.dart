@@ -24,7 +24,7 @@ class AppThemeData {
       surface: Colors.grey,
       onSurface: Color(0xff52A447));
 
-  static const _light = FontWeight.w300;
+  // static const _light = FontWeight.w300;
   static const _regular = FontWeight.w400;
   static const _semiBold = FontWeight.w600;
   static const _bold = FontWeight.w700;
