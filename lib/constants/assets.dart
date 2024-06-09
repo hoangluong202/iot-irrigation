@@ -21,6 +21,8 @@ class Assets {
   static const String calendarInactiveIcon =
       "assets/icons/calendar-inactive.svg";
   static const String plusIcon = "assets/icons/plus.svg";
+  static const String menuIcon = "assets/icons/menu.svg";
+  static const String eventIcon = "assets/icons/event.svg";
 
   static const Map<String, String> assetsDevice = {
     "1": kImage,

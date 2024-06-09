@@ -49,6 +49,7 @@ class AppThemeData {
     displayMedium: TextStyle(fontSize: 15, fontFamily: 'OpenSans', fontWeight: _regular, color: boldTextColor),
     displaySmall: TextStyle(fontSize: 12, fontFamily: 'OpenSans', fontWeight: _regular, color: boldTextColor),
 
+    bodyLarge: TextStyle(fontSize: 20, fontFamily: 'OpenSans', fontWeight: _bold, color: boldTextColor),
     
   );
 }

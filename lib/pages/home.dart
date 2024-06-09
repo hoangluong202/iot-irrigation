@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:iot_irrigation/components/calendar.dart';
 import 'package:iot_irrigation/components/tabbar-view.dart';
 import 'package:iot_irrigation/constants/assets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -21,7 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _selectedIndex == 0 ? _buildHome(context) : Text('Calendar'),
+      body: _selectedIndex == 0 ? _buildHome(context) : MyCalendarPage(),
       bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Theme.of(context).colorScheme.primary,
           unselectedItemColor: Theme.of(context).colorScheme.surface,
