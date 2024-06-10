@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:iot_irrigation/constants/assets.dart';
+import 'package:iot_irrigation/pages/calendar-details.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class MyCalendarPage extends StatefulWidget {
@@ -30,7 +31,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 12, 9, 35),
       "repeat": 1,
       "area": 1,
@@ -44,7 +45,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 13, 9, 35),
       "repeat": 1,
       "area": 1,
@@ -58,7 +59,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 14, 9, 35),
       "repeat": 1,
       "area": 1,
@@ -72,7 +73,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 15, 9, 35),
       "repeat": 1,
       "area": 1,
@@ -86,7 +87,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 15, 10, 35),
       "repeat": 1,
       "area": 1,
@@ -100,7 +101,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 15, 11, 35),
       "repeat": 1,
       "area": 1,
@@ -114,7 +115,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 15, 9, 35),
       "repeat": 1,
       "area": 1,
@@ -128,7 +129,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 15, 10, 35),
       "repeat": 1,
       "area": 1,
@@ -142,7 +143,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 15, 11, 35),
       "repeat": 1,
       "area": 1,
@@ -156,7 +157,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 15, 9, 35),
       "repeat": 1,
       "area": 1,
@@ -170,7 +171,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 15, 10, 35),
       "repeat": 1,
       "area": 1,
@@ -184,7 +185,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 15, 11, 35),
       "repeat": 1,
       "area": 1,
@@ -198,7 +199,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 15, 9, 35),
       "repeat": 1,
       "area": 1,
@@ -212,7 +213,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 15, 10, 35),
       "repeat": 1,
       "area": 1,
@@ -226,7 +227,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 15, 11, 35),
       "repeat": 1,
       "area": 1,
@@ -240,7 +241,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 15, 9, 35),
       "repeat": 1,
       "area": 1,
@@ -254,7 +255,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 15, 10, 35),
       "repeat": 1,
       "area": 1,
@@ -268,7 +269,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "k": 30,
       "p": 30,
       "mg": 40,
-      "h20": 100,
+      "h2o": 100,
       "startTime": DateTime(2024, 6, 15, 11, 35),
       "repeat": 1,
       "area": 1,
@@ -387,13 +388,33 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text(e["name"],
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .labelMedium),
+                                            Container(
+                                              height: 20,
+                                              child: TextButton(
+                                                style: ButtonStyle(
+                                                    padding: MaterialStateProperty
+                                                        .all<EdgeInsetsGeometry>(
+                                                            EdgeInsets.zero)),
+                                                onPressed: () {
+                                                  Navigator.of(context).push(
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          CalendarDetailPage(),
+                                                      settings: RouteSettings(
+                                                        arguments: e,
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                                child: Text(e["name"],
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .labelMedium),
+                                              ),
+                                            ),
                                             Text(
                                                 "${e["startTime"].hour}:${e["startTime"].minute} - ${e["endTime"].hour}:${e["endTime"].minute}"),
-                                          ])
+                                          ]),
                                     ],
                                   )))
                               .toList(),

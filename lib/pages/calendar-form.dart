@@ -20,6 +20,8 @@ class _CalendarFormState extends State<CalendarForm> {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
+          iconTheme:
+              IconThemeData(color: Theme.of(context).colorScheme.primary),
           title: Text('Thêm lịch tưới',
               style: Theme.of(context).textTheme.titleLarge),
           backgroundColor: Theme.of(context).colorScheme.background,
