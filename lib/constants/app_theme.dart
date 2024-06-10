@@ -21,8 +21,8 @@ class AppThemeData {
       onError: Color(0xff52A447),
       background: Color(0xffffffff),
       onBackground: Color(0xfff8f8f8),
-      surface: Colors.grey,
-      onSurface: Color(0xff52A447));
+      surface: Color(0xfff8f8f8),
+      onSurface: Colors.black);
 
   // static const _light = FontWeight.w300;
   static const _regular = FontWeight.w400;
@@ -50,6 +50,12 @@ class AppThemeData {
     displaySmall: TextStyle(fontSize: 12, fontFamily: 'OpenSans', fontWeight: _regular, color: boldTextColor),
 
     bodyLarge: TextStyle(fontSize: 20, fontFamily: 'OpenSans', fontWeight: _bold, color: boldTextColor),
-    
+    bodyMedium: TextStyle(fontSize: 15, fontFamily: 'OpenSans', fontWeight: _bold, color: boldTextColor),
+    bodySmall: TextStyle(fontSize: 12, fontFamily: 'OpenSans', fontWeight: _bold, color: boldTextColor),
+
+    headlineLarge: TextStyle(fontSize: 20, fontFamily: 'OpenSans', fontWeight: _bold, color: boldTextColor),
+    headlineMedium: TextStyle(fontSize: 15, fontFamily: 'OpenSans', fontWeight: _bold, color: boldTextColor),
+    headlineSmall: TextStyle(fontSize: 12, fontFamily: 'OpenSans', fontWeight: _bold, color: boldTextColor),
+
   );
 }

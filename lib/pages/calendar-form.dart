@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:iot_irrigation/components/date-time-picker.dart';
 import 'package:iot_irrigation/constants/assets.dart';
 
 class CalendarForm extends StatefulWidget {
@@ -17,6 +18,7 @@ class _CalendarFormState extends State<CalendarForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text('Thêm lịch tưới',
               style: Theme.of(context).textTheme.titleLarge),
@@ -152,161 +154,134 @@ class _CalendarFormState extends State<CalendarForm> {
                     _buildLabelWithIconSvg(
                         context, 'Khu vực tưới', Assets.locationIcon),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Expanded(
-                          child: ListTile(
-                            title: Text('1'),
-                            horizontalTitleGap: 0,
-                            titleTextStyle:
-                                Theme.of(context).textTheme.displayMedium,
-                            textColor: 1 == _selectedArea
-                                ? Theme.of(context).colorScheme.primary
-                                : Theme.of(context).colorScheme.surface,
-                            leading: Radio<int>(
-                              value: 1,
-                              groupValue: _selectedArea,
-                              onChanged: (int? value) {
-                                setState(() {
-                                  _selectedArea = value ?? 1;
-                                });
-                              },
-                            ),
-                          ),
+                        Radio<int>(
+                          value: 1,
+                          groupValue: _selectedArea,
+                          onChanged: (int? value) {
+                            setState(() {
+                              _selectedArea = value ?? 1;
+                            });
+                          },
                         ),
-                        Expanded(
-                          child: ListTile(
-                            title: Text('2'),
-                            horizontalTitleGap: 0,
-                            titleTextStyle:
-                                Theme.of(context).textTheme.displayMedium,
-                            textColor: 2 == _selectedArea
-                                ? Theme.of(context).colorScheme.primary
-                                : Theme.of(context).colorScheme.surface,
-                            iconColor: 2 == _selectedArea
-                                ? Theme.of(context).colorScheme.primary
-                                : Theme.of(context).colorScheme.surface,
-                            leading: Radio<int>(
-                              value: 2,
-                              groupValue: _selectedArea,
-                              onChanged: (int? value) {
-                                setState(() {
-                                  _selectedArea = value ?? 2;
-                                });
-                              },
-                            ),
-                          ),
+                        Text('KV 1',
+                            style: Theme.of(context).textTheme.displayMedium),
+                        Radio<int>(
+                          value: 2,
+                          groupValue: _selectedArea,
+                          onChanged: (int? value) {
+                            setState(() {
+                              _selectedArea = value ?? 2;
+                            });
+                          },
                         ),
-                        Expanded(
-                          child: ListTile(
-                            title: Text('3'),
-                            horizontalTitleGap: 0,
-                            titleTextStyle:
-                                Theme.of(context).textTheme.displayMedium,
-                            textColor: 3 == _selectedArea
-                                ? Theme.of(context).colorScheme.primary
-                                : Theme.of(context).colorScheme.surface,
-                            leading: Radio<int>(
-                              value: 3,
-                              groupValue: _selectedArea,
-                              onChanged: (int? value) {
-                                setState(() {
-                                  _selectedArea = value ?? 3;
-                                });
-                              },
-                            ),
-                          ),
+                        Text('KV 2',
+                            style: Theme.of(context).textTheme.displayMedium),
+                        Radio<int>(
+                          value: 3,
+                          groupValue: _selectedArea,
+                          onChanged: (int? value) {
+                            setState(() {
+                              _selectedArea = value ?? 3;
+                            });
+                          },
                         ),
+                        Text('KV 3',
+                            style: Theme.of(context).textTheme.displayMedium),
                       ],
                     ),
                     _buildLabelWithIconSvg(
                         context, 'Chế độ trộn', Assets.levelIcon),
                     Row(
                       children: [
-                        Expanded(
-                          child: ListTile(
-                            title: Text('Sơ'),
-                            horizontalTitleGap: 0,
-                            titleTextStyle:
-                                Theme.of(context).textTheme.displayMedium,
-                            textColor: 1 == _selectedLevel
-                                ? Theme.of(context).colorScheme.primary
-                                : Theme.of(context).colorScheme.surface,
-                            leading: Radio<int>(
-                              value: 1,
-                              groupValue: _selectedLevel,
-                              onChanged: (int? value) {
-                                setState(() {
-                                  _selectedLevel = value ?? 1;
-                                });
-                              },
-                            ),
-                          ),
+                        Radio<int>(
+                          value: 1,
+                          groupValue: _selectedLevel,
+                          onChanged: (int? value) {
+                            setState(() {
+                              _selectedLevel = value ?? 1;
+                            });
+                          },
                         ),
-                        Expanded(
-                          child: ListTile(
-                            title: Text('Trung bình'),
-                            horizontalTitleGap: 0,
-                            titleTextStyle:
-                                Theme.of(context).textTheme.displayMedium,
-                            textColor: 2 == _selectedLevel
-                                ? Theme.of(context).colorScheme.primary
-                                : Theme.of(context).colorScheme.surface,
-                            iconColor: 2 == _selectedLevel
-                                ? Theme.of(context).colorScheme.primary
-                                : Theme.of(context).colorScheme.surface,
-                            leading: Radio<int>(
-                              value: 2,
-                              groupValue: _selectedLevel,
-                              onChanged: (int? value) {
-                                setState(() {
-                                  _selectedLevel = value ?? 2;
-                                });
-                              },
-                            ),
-                          ),
+                        Text('Sơ',
+                            style: Theme.of(context).textTheme.displayMedium),
+                        Radio<int>(
+                          value: 2,
+                          groupValue: _selectedLevel,
+                          onChanged: (int? value) {
+                            setState(() {
+                              _selectedLevel = value ?? 2;
+                            });
+                          },
                         ),
-                        Expanded(
-                          child: ListTile(
-                            title: Text('Nhuyễn'),
-                            horizontalTitleGap: 0,
-                            titleTextStyle:
-                                Theme.of(context).textTheme.displayMedium,
-                            textColor: 3 == _selectedLevel
-                                ? Theme.of(context).colorScheme.primary
-                                : Theme.of(context).colorScheme.surface,
-                            leading: Radio<int>(
-                              value: 3,
-                              groupValue: _selectedLevel,
-                              onChanged: (int? value) {
-                                setState(() {
-                                  _selectedLevel = value ?? 3;
-                                });
-                              },
-                            ),
-                          ),
+                        Text('Trung bình',
+                            style: Theme.of(context).textTheme.displayMedium),
+                        Radio<int>(
+                          value: 3,
+                          groupValue: _selectedLevel,
+                          onChanged: (int? value) {
+                            setState(() {
+                              _selectedLevel = value ?? 3;
+                            });
+                          },
                         ),
+                        Text('Nhuyễn',
+                            style: Theme.of(context).textTheme.displayMedium),
                       ],
                     ),
-                    _buildLabelWithIconSvg(
-                        context, 'Thời gian bắt đầu', Assets.clockIcon),
-                    // TextFormField(
-                    //   keyboardType: TextInputType.datetime,
-                    // ),
-                    _buildLabelWithIconSvg(
-                        context, 'Lặp lại', Assets.repeatIcon),
-                    TextFormField(
-                      keyboardType: TextInputType.number,
-                      style: Theme.of(context).textTheme.displayMedium,
-                      decoration: const InputDecoration(
-                          contentPadding: EdgeInsets.only(left: 10, right: 10),
-                          hintText: '1',
-                          suffixText: 'lần',
-                          border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)))),
-                    ),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Column(children: [
+                            _buildLabelWithIconSvg(
+                                context, 'Thời gian bắt đầu', Assets.clockIcon),
+                            const SizedBox(height: 3),
+                            DateTimePicker(),
+                          ]),
+                          Container(
+                            width: 100,
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  _buildLabelWithIconSvg(
+                                      context, 'Lặp lại', Assets.repeatIcon),
+                                  TextFormField(
+                                    keyboardType: TextInputType.number,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .displayMedium,
+                                    decoration: const InputDecoration(
+                                        contentPadding: EdgeInsets.only(
+                                            left: 10, right: 10),
+                                        hintText: '1',
+                                        suffixText: 'lần',
+                                        border: OutlineInputBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(10)))),
+                                  ),
+                                ]),
+                          ),
+                        ]),
                   ])),
-            ])));
+            ])),
+        floatingActionButton: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              maximumSize: const Size(300, 50),
+              alignment: Alignment.center,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Container(
+              alignment: Alignment.center,
+              child: Text(
+                'TẠO MỚI',
+              ),
+            )),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat);
   }
 
   Widget _buildLabelWithIconSvg(

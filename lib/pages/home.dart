@@ -26,7 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: _selectedIndex == 0 ? _buildHome(context) : MyCalendarPage(),
       bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Theme.of(context).colorScheme.primary,
-          unselectedItemColor: Theme.of(context).colorScheme.surface,
+          unselectedItemColor: Theme.of(context).colorScheme.onSurface,
           currentIndex: _selectedIndex,
           onTap: (value) => {_onItemTapped(value)},
           items: <BottomNavigationBarItem>[
