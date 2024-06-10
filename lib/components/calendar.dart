@@ -66,7 +66,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "duration": 680,
       "endTime": DateTime(2024, 6, 14, 9, 46, 20),
     },
-        {
+    {
       "id": 1,
       "name": "Lịch tưới phân bón tăng trưởng",
       "k": 30,
@@ -108,7 +108,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "duration": 680,
       "endTime": DateTime(2024, 6, 12, 15, 11, 20),
     },
-        {
+    {
       "id": 1,
       "name": "Lịch tưới phân bón tăng trưởng",
       "k": 30,
@@ -150,7 +150,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "duration": 680,
       "endTime": DateTime(2024, 6, 12, 15, 11, 20),
     },
-        {
+    {
       "id": 1,
       "name": "Lịch tưới phân bón tăng trưởng",
       "k": 30,
@@ -192,7 +192,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       "duration": 680,
       "endTime": DateTime(2024, 6, 12, 15, 11, 20),
     },
-        {
+    {
       "id": 1,
       "name": "Lịch tưới phân bón tăng trưởng",
       "k": 30,
@@ -303,8 +303,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
 
   Widget _buildCalendar(BuildContext context) {
     return Container(
-        margin: const EdgeInsets.only(top: 40, left: 20, right: 20),
-        height: 300,
+        margin: const EdgeInsets.only(left: 20, right: 20),
         child: Column(
           children: [
             TableCalendar(
@@ -353,41 +352,56 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
               startingDayOfWeek: StartingDayOfWeek.monday,
             ),
             const SizedBox(height: 20),
-            SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: ValueListenableBuilder<List<Map<String, dynamic>>>(
-                valueListenable: _selectedEvents,
-                builder: (context, value, _) {
-                  return Column(
-                    children: value
-                        .map((e) => Container(
-                            margin: const EdgeInsets.only(top: 3, bottom: 3),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                SvgPicture.asset(Assets.eventIcon,
-                                    width: 40, height: 40),
-                                const SizedBox(width: 10),
-                                Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
+            Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.onBackground,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                height: 430,
+                child: Scrollbar(
+                  thumbVisibility: true,
+                  trackVisibility: true,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: ValueListenableBuilder<List<Map<String, dynamic>>>(
+                      valueListenable: _selectedEvents,
+                      builder: (context, value, _) {
+                        return Column(
+                          children: value
+                              .map((e) => Container(
+                                  margin:
+                                      const EdgeInsets.only(top: 3, bottom: 3),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                        CrossAxisAlignment.center,
                                     children: [
-                                      Text(e["name"],
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .labelMedium),
-                                      Text(
-                                          "${e["startTime"].hour}:${e["startTime"].minute} - ${e["endTime"].hour}:${e["endTime"].minute}"),
-                                    ])
-                              ],
-                            )))
-                        .toList(),
-                  );
-                },
-              ),
-            ),
+                                      SvgPicture.asset(Assets.eventIcon,
+                                          width: 40, height: 40),
+                                      const SizedBox(width: 10),
+                                      Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(e["name"],
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .labelMedium),
+                                            Text(
+                                                "${e["startTime"].hour}:${e["startTime"].minute} - ${e["endTime"].hour}:${e["endTime"].minute}"),
+                                          ])
+                                    ],
+                                  )))
+                              .toList(),
+                        );
+                      },
+                    ),
+                  ),
+                ))
           ],
         ));
   }
@@ -395,7 +409,6 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
   Widget _buildHeading(BuildContext context) {
     return Container(
         margin: const EdgeInsets.only(top: 40, left: 20, right: 20),
-        color: Colors.amber,
         height: 60,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
