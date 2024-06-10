@@ -3,6 +3,8 @@ import 'package:iot_irrigation/components/calendar.dart';
 import 'package:iot_irrigation/components/tabbar-view.dart';
 import 'package:iot_irrigation/constants/assets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:iot_irrigation/pages/calendar-form.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -49,7 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
           ]),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Add your onPressed code here!
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return CalendarForm();
+          }));
         },
         child: SvgPicture.asset(Assets.plusIcon),
       ),

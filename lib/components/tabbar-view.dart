@@ -287,44 +287,43 @@ class TabBarComponent extends StatelessWidget {
                 ),
                 Container(
                     height: 400,
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.vertical,
-                      child: DataTable(
-                          columnSpacing: 3,
-                          headingRowHeight: 30,
-                          dataTextStyle:
-                              Theme.of(context).textTheme.displaySmall,
-                          dataRowMinHeight: 25,
-                          dataRowMaxHeight: 30,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.onBackground,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          columns: [
-                            DataColumn(label: Text('Thời gian')),
-                            DataColumn(label: Text('Thiết bị')),
-                            DataColumn(label: Text('Hoạt động')),
-                          ],
-                          rows: dataHistory.map((e) {
-                            return DataRow(cells: [
-                              DataCell(
-                                  Text(e['time'].toString().substring(0, 19))),
-                              DataCell(Text(e['deviceName'].toString())),
-                              DataCell(Text(e['status'].toString() == 'true'
-                                  ? 'Mở'
-                                  : 'Đóng')),
-                            ]);
-                          }).toList()
-
-                          // [
-                          //   DataRow(cells: [
-                          //     DataCell(Text(dataHistory[0]['time'].toString().substring(0, 19))),
-                          //     DataCell(Text('Bình chứa Photpho')),
-                          //     DataCell(Text('Mở')),
-                          //   ]),
-                          // ],
-                          ),
-                    )),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.background,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Scrollbar(
+                        thumbVisibility: true,
+                        trackVisibility: true,
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.vertical,
+                          child: DataTable(
+                              columnSpacing: 3,
+                              headingRowHeight: 30,
+                              dataTextStyle:
+                                  Theme.of(context).textTheme.displaySmall,
+                              dataRowMinHeight: 25,
+                              dataRowMaxHeight: 30,
+                              decoration: BoxDecoration(
+                                color:
+                                    Theme.of(context).colorScheme.onBackground,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              columns: [
+                                DataColumn(label: Text('Thời gian')),
+                                DataColumn(label: Text('Thiết bị')),
+                                DataColumn(label: Text('Hoạt động')),
+                              ],
+                              rows: dataHistory.map((e) {
+                                return DataRow(cells: [
+                                  DataCell(Text(
+                                      e['time'].toString().substring(0, 19))),
+                                  DataCell(Text(e['deviceName'].toString())),
+                                  DataCell(Text(e['status'].toString() == 'true'
+                                      ? 'Mở'
+                                      : 'Đóng')),
+                                ]);
+                              }).toList()),
+                        ))),
               ],
             ),
           )

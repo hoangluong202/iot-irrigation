@@ -14,6 +14,7 @@ class Assets {
   static const String pImage = "assets/images/p.png";
   static const String waterImage = "assets/images/water.png";
   static const String mixerImage = "assets/images/mixer.png";
+  static const String h2oImage = "assets/images/h2o.png";
 
   static const String homeActiveIcon = "assets/icons/home-active.svg";
   static const String homeInactiveIcon = "assets/icons/home-inactive.svg";
@@ -23,6 +24,13 @@ class Assets {
   static const String plusIcon = "assets/icons/plus.svg";
   static const String menuIcon = "assets/icons/menu.svg";
   static const String eventIcon = "assets/icons/event.svg";
+  static const String backIcon = "assets/icons/chevron-left.svg";
+  static const String clockIcon = "assets/icons/clock.svg";
+  static const String glutenIcon = "assets/icons/gluten.svg";
+  static const String labelIcon = "assets/icons/label.svg";
+  static const String levelIcon = "assets/icons/level.svg";
+  static const String locationIcon = "assets/icons/location.svg";
+  static const String repeatIcon = "assets/icons/repeat.svg";
 
   static const Map<String, String> assetsDevice = {
     "1": kImage,
